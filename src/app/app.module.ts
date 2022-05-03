@@ -1,27 +1,16 @@
 import { DoBootstrap, Injector, NgModule } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 
 @NgModule({
-  imports: [BrowserModule, BrowserAnimationsModule],
+  imports: [BrowserModule],
   providers: [],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
 })
-export class AppModule implements DoBootstrap {
-  public constructor(private injector: Injector) {
-    const webComponent = createCustomElement(AppComponent, {
-      injector: this.injector,
-    });
-
-    customElements.define('app-root-custom-element', webComponent);
-  }
-
-  public ngDoBootstrap(): void {}
-}
+export class AppModule {}
 
 /*
 Copyright Google LLC. All Rights Reserved.

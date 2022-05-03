@@ -28,7 +28,9 @@ export class AppComponent {
 
   public AddImage() {
     const ne = this.elementRef.nativeElement;
+    console.log(this.image.nativeElement);
     html2canvas(this.image.nativeElement).then(function (canvas: any) {
+      console.log(canvas);
       ne.appendChild(canvas);
       console.log('added canvas');
     });
